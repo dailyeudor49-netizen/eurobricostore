@@ -1,0 +1,86 @@
+.plupload_buttons a.plupload_start {
+	display: none;
+}
+
+li.plupload_delete a::after {
+	content: "\e14c";
+    font-family: "Material Icons";
+    font-size: 22px;
+    color: red;
+    margin-top: -4px;
+    display: block;
+}
+
+li.plupload_delete a {
+    background: unset;
+}
+
+.plupload_filelist_footer .plupload_file_name .plupload_buttons {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.plupload_content {
+    padding-top: 40px;
+}
+/*
+.plupload_buttons a.plupload_add::before {
+    content: "\e2c6";
+    font-family: "Material Icons";
+    position: absolute;
+    left: 5px;
+    font-size: 20px;
+    top:5px;
+}*/
+
+.plupload_buttons a.plupload_add {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+    background: unset;
+    background: none;
+    padding:8px;
+    /*padding-left:30px;*/
+    font-weight:bold;
+    border: 1px #479A36 solid;
+    border-radius: 0px;
+}
+
+.plupload_buttons a.plupload_add {
+	background-color: #007F00;
+	color: white;
+}
+
+.plupload_buttons a.plupload_add:hover {
+	color: #479A36 !important;
+	background-color: white;
+}
+li.plupload_droptext{
+	line-height:110px;
+}
+.plupload_scroll .plupload_filelist{
+	height:130px;
+}
+.plupload_container{
+	padding:0;
+}
+.dbox-upload{
+	display:none;
+}
+#we_loader {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: rgba(255,255,255,0.2);
+    z-index: 999;
+    cursor: wait;
+    background-image: url(share/images/icons/agriloading.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.plupload_header{
+	display:none;
+}
