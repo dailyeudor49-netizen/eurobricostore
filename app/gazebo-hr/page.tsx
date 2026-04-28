@@ -597,8 +597,8 @@ const QuickOrderForm = () => {
     const formData = new URLSearchParams();
 
     // Required fields - Croatian offer
-    formData.append('uid', '019be4ed-fb60-7ba4-89d4-deecc13c8b0a');
-    formData.append('key', '7b172b0b1994e9fa9961ad');
+    formData.append('uid', '019be4ed-80e5-7970-ab86-1938a865c187');
+    formData.append('key', 'd05dde623c227395880400');
     formData.append('offer', '3255');
     formData.append('lp', '3302');
     formData.append('name', form.fullName.trim());
