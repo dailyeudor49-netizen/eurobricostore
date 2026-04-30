@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
+import Script from 'next/script';
 import {
   CheckCircle2,
   Truck,
@@ -16,12 +17,40 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 
+declare global {
+  interface Window {
+    dataLayer: unknown[];
+    gtag: (...args: unknown[]) => void;
+    __conversionFired?: boolean;
+  }
+}
+
+const CONVERSION_ID = 'AW-17541805101';
+const CONVERSION_LABEL = 'AW-17541805101/4iqCCNS-naUcEK3oyqxB';
+
 export default function GazeboHrThankYou() {
   const [orderData, setOrderData] = useState<{
     fullName?: string;
     address?: string;
     phone?: string;
   }>({});
+
+  // Google Ads conversion tracking
+  useEffect(() => {
+    const checkAndFire = () => {
+      if (window.__conversionFired) return;
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'conversion', {
+          'send_to': CONVERSION_LABEL
+        });
+        window.__conversionFired = true;
+      }
+    };
+
+    checkAndFire();
+    const timeout = setTimeout(checkAndFire, 1000);
+    return () => clearTimeout(timeout);
+  }, []);
 
   useEffect(() => {
     const storedData = localStorage.getItem('gazebo-hr-order');
@@ -43,7 +72,31 @@ export default function GazeboHrThankYou() {
     month: 'long'
   });
 
+  const handleGtagLoad = () => {
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function gtag() {
+      window.dataLayer.push(arguments);
+    };
+    window.gtag('js', new Date());
+    window.gtag('config', CONVERSION_ID);
+
+    if (!window.__conversionFired) {
+      window.gtag('event', 'conversion', {
+        'send_to': CONVERSION_LABEL
+      });
+      window.__conversionFired = true;
+    }
+  };
+
   return (
+    <>
+      {/* Google Ads Conversion Tracking */}
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${CONVERSION_ID}`}
+        strategy="afterInteractive"
+        onLoad={handleGtagLoad}
+      />
+
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Header */}
       <header className="bg-white border-b border-gray-200 py-4 px-4">
@@ -307,5 +360,6 @@ export default function GazeboHrThankYou() {
         </div>
       </footer>
     </div>
+    </>
   );
 }
