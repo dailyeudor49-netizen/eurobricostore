@@ -32,6 +32,23 @@ export default function GazeboPlThankYou() {
         // ignore
       }
     }
+
+    // Google Ads conversion
+    if (typeof window !== 'undefined' && !localStorage.getItem('gazebo-pl-conv-fired')) {
+      const script = document.createElement('script');
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=AW-17541805101';
+      script.async = true;
+      document.head.appendChild(script);
+      script.onload = () => {
+        const w = window as unknown as Record<string, unknown>;
+        w.dataLayer = (w.dataLayer as unknown[]) || [];
+        function gtag(...args: unknown[]) { (w.dataLayer as unknown[]).push(args); }
+        gtag('js', new Date());
+        gtag('config', 'AW-17541805101');
+        gtag('event', 'conversion', { send_to: 'AW-17541805101/BEibCO3VnKocEK3oyqxB' });
+        localStorage.setItem('gazebo-pl-conv-fired', '1');
+      };
+    }
   }, []);
 
   const orderNumber = `GZB-${Date.now().toString().slice(-6)}`;

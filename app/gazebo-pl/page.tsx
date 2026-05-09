@@ -988,6 +988,13 @@ const Footer = () => (
 export default function Page() {
   return (
     <div className="min-h-screen bg-white font-sans text-black">
+      {/* Google Ads gtag */}
+      <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17541805101" />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-17541805101');`,
+        }}
+      />
       <CountdownTimer />
       <Header />
       <Hero />
