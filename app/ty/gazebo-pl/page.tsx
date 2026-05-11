@@ -37,8 +37,20 @@ export default function GazeboPlThankYou() {
 
   // Google Ads conversion tracking
   useEffect(() => {
+    const ensureGtag = () => {
+      if (typeof window.gtag !== 'function') {
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function gtag() {
+          window.dataLayer.push(arguments);
+        };
+        window.gtag('js', new Date());
+        window.gtag('config', CONVERSION_ID);
+      }
+    };
+
     const checkAndFire = () => {
       if (window.__conversionFiredPl) return;
+      ensureGtag();
       if (typeof window.gtag === 'function') {
         window.gtag('event', 'conversion', {
           'send_to': CONVERSION_LABEL
