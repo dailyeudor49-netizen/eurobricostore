@@ -23,7 +23,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 /**
  * POP UP GAZEBO — 3x3m Dvojitá Strecha
- * Landing Page pre Facebook Ads - Agresívny Marketing - SLOVENSKO
+ * Landing Page za Facebook Ads - Agresívny Marketing - SLOVENSKO
  */
 
 // --- Countdown Timer ---
@@ -200,7 +200,7 @@ const Hero = () => {
             </h1>
 
             <p className="text-[17px] md:text-lg text-gray-600 leading-relaxed">
-              Prémiová oceľová konštrukcia, vodoodolná plachta s UV ochranou a odnímateľné bočné steny v cene.
+              Prémiová oceľová konštrukcia, vodotesná plachta s UV ochranou a odnímateľné bočné steny v cene.
             </p>
           </div>
 
@@ -214,13 +214,13 @@ const Hero = () => {
             </div>
             <div className="text-center mb-3">
               <span className="bg-red-600 text-white px-4 py-1.5 rounded-full text-sm font-black inline-block">
-                UŠETRÍTE 120€ — IBA DNES!
+                UŠETRITE 120€ — IBA DNES!
               </span>
             </div>
             <div className="flex items-center justify-center gap-1 mb-3">
               {[...Array(5)].map((_, i) => <Star key={i} size={22} fill="currentColor" className="text-yellow-500" />)}
               <span className="font-bold text-sm ml-2">4.9/5</span>
-              <span className="text-gray-500 text-sm">(847 hodnotení)</span>
+              <span className="text-gray-500 text-sm">(847 recenzií)</span>
             </div>
             <StockCounter />
           </div>
@@ -232,8 +232,8 @@ const Hero = () => {
           <ul className="space-y-2.5">
             {[
               { icon: Ruler, text: "3x3 Metre — Priestor pre 8-10 osôb" },
-              { icon: Layers, text: "Dvojitá Vetraná Strecha — Chladno aj pri 40°C" },
-              { icon: Droplets, text: "100% Vodoodolné — Úplná ochrana" },
+              { icon: Layers, text: "Dvojitá Vetraná Strecha — Chlad aj pri 40°C" },
+              { icon: Droplets, text: "100% Vodotesné — Úplná ochrana" },
               { icon: Wind, text: "4 Bočné Steny V Cene" },
             ].map((item, i) => (
               <li key={i} className="flex items-center gap-3 bg-gray-50 p-4 rounded-xl">
@@ -264,7 +264,7 @@ const Hero = () => {
           <div className="grid grid-cols-3 gap-2">
             <div className="bg-gray-100 p-3 rounded-xl text-center">
               <Truck className="mx-auto mb-1 text-orange-600" size={22} />
-              <p className="text-[11px] font-bold text-gray-700">Doprava<br />ZADARMO</p>
+              <p className="text-[11px] font-bold text-gray-700">Doručenie<br />ZADARMO</p>
             </div>
             <div className="bg-gray-100 p-3 rounded-xl text-center">
               <RotateCcw className="mx-auto mb-1 text-orange-600" size={22} />
@@ -289,8 +289,8 @@ const TrustRow = () => (
           <div key={idx} className="flex items-center gap-10 mx-6">
             <span className="font-bold text-sm flex items-center gap-2"><Truck size={16} /> EXPRESNÉ DORUČENIE 24-48H</span>
             <span className="font-bold text-sm flex items-center gap-2"><Shield size={16} /> 2 ROKY ZÁRUKY</span>
-            <span className="font-bold text-sm flex items-center gap-2"><RotateCcw size={16} /> VRÁTENIE ZADARMO</span>
-            <span className="font-bold text-sm flex items-center gap-2"><ThumbsUp size={16} /> +5.000 ZÁKAZNÍKOV</span>
+            <span className="font-bold text-sm flex items-center gap-2"><RotateCcw size={16} /> BEZPLATNÉ VRÁTENIE</span>
+            <span className="font-bold text-sm flex items-center gap-2"><ThumbsUp size={16} /> +5 000 ZÁKAZNÍKOV</span>
           </div>
         ))}
       </div>
@@ -303,7 +303,7 @@ const ProblemSolution = () => (
     <div className="max-w-5xl mx-auto">
       <div className="text-center mb-10">
         <h2 className="text-[22px] md:text-4xl font-black uppercase tracking-tight leading-tight">
-          Už Vás Nebaví Byť V Lete Zatvorení Doma?
+          Máte Dosť Sedenia Doma V Lete?
         </h2>
       </div>
 
@@ -316,8 +316,8 @@ const ProblemSolution = () => (
           <ul className="space-y-3">
             {[
               "Páliace slnko, ktoré znemožňuje pobyt vonku",
-              "Náhle búrky kazia oslavy a grilovanie",
-              "Žiadne súkromie pred susedmi",
+              "Nečakané búrky kazia oslavy a grilovačky",
+              "Žiadne súkromie od susedov",
               "Záhradný nábytok zničený počasím",
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-3 text-[15px] md:text-base">
@@ -356,12 +356,12 @@ const Features = () => {
   const features = [
     {
       title: "Dvojitá Vetraná Strecha",
-      desc: "Až o 10°C chladnejšie ako bežné altánky.",
+      desc: "Až o 10°C chladnejšie ako v bežných altánkoch.",
       img: "/images/gazebo/1.jpg",
     },
     {
-      title: "Vodoodolná Plachta",
-      desc: "Polyester 180g/m² s PU povlakom. 100% vodoodolné.",
+      title: "Vodotesná Plachta",
+      desc: "Polyester 180g/m² s PU povrchovou úpravou. 100% vodotesné.",
       img: "/images/gazebo/2.jpg",
     },
     {
@@ -376,12 +376,12 @@ const Features = () => {
     },
     {
       title: "Jednoduchá Montáž",
-      desc: "2 osoby, 30 minút. Všetko súčasťou balenia.",
+      desc: "2 osoby, 30 minút. Všetko je súčasťou balenia.",
       img: "/images/gazebo/5.jpg",
     },
     {
       title: "Elegantný Dizajn",
-      desc: "Béžová farba, ktorá ladí s každou záhradou.",
+      desc: "Béžová farba, ktorá sa hodí do každej záhrady.",
       img: "/images/gazebo/6.jpg",
     },
   ];
@@ -425,11 +425,11 @@ const Specs = () => (
       <div className="bg-gray-800 rounded-2xl p-5 md:p-6">
         <div className="grid grid-cols-2 gap-4 md:gap-5">
           {[
-            { label: "Rozmery", value: "3m x 3m x 2.65m" },
+            { label: "Rozmery", value: "3m x 3m x 2,65m" },
             { label: "Plocha", value: "9 m²" },
             { label: "Konštrukcia", value: "Lakovaná oceľ" },
             { label: "Plachta", value: "Polyester 180g/m²" },
-            { label: "Vodoodolnosť", value: "100%" },
+            { label: "Vodotesnosť", value: "100%" },
             { label: "UV Ochrana", value: "UPF 50+" },
             { label: "Kapacita", value: "8-10 osôb" },
             { label: "Bočné Steny", value: "4 v cene" },
@@ -446,46 +446,36 @@ const Specs = () => (
 );
 
 const reviewData = [
-  // Batch 1
-  { batch: 1, av: "M", name: "Martin B.", city: "Bratislava", stars: 5, text: "Postavil som ho za 40 minút s manželkou. Neuveriteľná kvalita za túto cenu, myslel som, že dostanem lacné materiály, ale konštrukcia je naozaj pevná. Dvojitá strecha je geniálna!" },
-  { batch: 1, av: "J", name: "Jana S.", city: "Košice", stars: 5, text: "Už prežil dve silné búrky bez jedinej kvapky vody. Bočné steny sú super praktické, keď sú susedia na záhrade. Veľmi odporúčam!" },
-  { batch: 1, av: "P", name: "Peter F.", city: "Prešov", stars: 5, text: "Za 99€ je to darček! Videl som ho v obchode takmer za dvojnásobok. Dorazil za 2 dni, montáž jednoduchá. Teraz vždy obedujeme pod altánkom." },
-  // Batch 2
-  { batch: 2, av: "L", name: "Lucia R.", city: "Žilina", stars: 5, text: "Mali sme synove narodeniny pod altánkom. 15 detí v bezpečí pred slnkom! Stabilná konštrukcia, elegantná farba, ktorá ladí s našou záhradou." },
-  { batch: 2, av: "T", name: "Tomáš D.", city: "Banská Bystrica", stars: 5, text: "Hľadal som altánok s bočnými stenami v cene, inde ich predávajú zvlášť za 50€ naviac. Tu bolo všetko súčasťou ceny. Prémiová kvalita!" },
-  { batch: 2, av: "K", name: "Katarína M.", city: "Nitra", stars: 5, text: "Dvojitá strecha naozaj robí rozdiel. Vždy je tam čerstvý vzduch aj o 14 hodine popoludní. Postavené za menej ako hodinu, výsledok je spektakulárny!" },
-  // Batch 3
-  { batch: 3, av: "R", name: "Róbert C.", city: "Trnava", stars: 5, text: "Tretí altánok, ktorý kupujem za 5 rokov, prvé dva som vyhodil po jednej sezóne. Tento vyzerá, že vydrží: silná oceľ, odolná plachta, perfektné švy." },
-  { batch: 3, av: "E", name: "Eva L.", city: "Trenčín", stars: 5, text: "Používam ho ako kútik na čítanie a rannú kávu. So spustenými stenami je to môj malý raj. Výborný pomer ceny a kvality!" },
-  { batch: 3, av: "D", name: "Dávid P.", city: "Martin", stars: 5, text: "Pochyboval som kvôli nízkej cene, objednal som pripravený na vrátenie. Ale zmýlil som sa: top kvalita, rýchla doprava, jednoduchá montáž. 5 hviezdičiek zaslúžených." },
-  // Batch 4
-  { batch: 4, av: "V", name: "Veronika T.", city: "Poprad", stars: 5, text: "Konečne môžem raňajkovať na záhrade bez toho, aby som umierala horúčavou! Altánok dorazil dobre zabalený, žiadny kus poškodený. Veľmi odporúčam." },
-  { batch: 4, av: "O", name: "Ondrej M.", city: "Piešťany", stars: 5, text: "Kúpil som ho na nedeľné grilovanie. Už prežil 3 letné búrky bez problémov. Moji priatelia boli nadšení z kvality." },
-  { batch: 4, av: "A", name: "Alena G.", city: "Považská Bystrica", stars: 5, text: "U nás je v lete slnko veľmi silné. Dvojitá strecha udržuje priestor chladný. Bočné steny perfektné pre súkromie. Výborná kúpa!" },
-  // Batch 5
-  { batch: 5, av: "F", name: "František F.", city: "Zvolen", stars: 5, text: "Postavil som altánok sám za približne 50 minút podľa návodu. Stabilná konštrukcia, kvalitná plachta. Za túto cenu nie je lepšieho." },
-  { batch: 5, av: "I", name: "Ivana R.", city: "Michalovce", stars: 4, text: "Výborný výrobok, len návod mohol byť jasnejší. Ale nakoniec všetko postavené perfektne. Altánok je krásny a funkčný." },
-  { batch: 5, av: "H", name: "Honza B.", city: "Komárno", stars: 5, text: "Kúpil som ho na dcérinu svadbu na záhrade. Elegantný, priestranný, ochránil hostí pred júlovým slnkom. Peniaze veľmi dobre utratené!" },
-  // Batch 6
-  { batch: 6, av: "B", name: "Barbora C.", city: "Levice", stars: 5, text: "Používam ho každý deň na prácu pri počítači vonku. S WiFi a altánkom mám svoju kanceláriu na záhrade. Geniálne!" },
-  { batch: 6, av: "G", name: "Gustáv L.", city: "Dunajská Streda", stars: 5, text: "Hľadal som niečo pevné, čo vydrží. Po 6 mesiacoch intenzívneho používania môžem povedať, že je to výborný výrobok. Žiadne problémy." },
-  { batch: 6, av: "N", name: "Nikola V.", city: "Nové Zámky", stars: 5, text: "Platba pri doručení veľmi pohodlná, žiadne riziko. Kuriér bol presný. Altánok je presne ako na obrázkoch, vlastne ešte lepší!" },
-  // Batch 7
-  { batch: 7, av: "U", name: "Urban Z.", city: "Lučenec", stars: 5, text: "Fantastické! Používam ho na večere vonku s priateľmi. Kvalita je naozaj špičková, plachta vyzerá veľmi odolne. Výborná kúpa!" },
-  { batch: 7, av: "Z", name: "Zuzana N.", city: "Spišská Nová Ves", stars: 5, text: "Môj starý altánok sa zlomil po jednom roku. Tento vyzerá oveľa pevnejší. Bočné steny sú neuveriteľný plus za túto cenu." },
-  { batch: 7, av: "C", name: "Cyril S.", city: "Bardejov", stars: 5, text: "Perfektný pre našu záhradu! Montáž veľmi jednoduchá, vo dvoch sme potrebovali pol hodiny. Béžová farba je elegantná a ladí so všetkým." },
-  // Batch 8
-  { batch: 8, av: "W", name: "Václav M.", city: "Senica", stars: 5, text: "U nás je v lete veľmi horúco. Dvojitá strecha udržuje priestor chladný! Rýchla doprava a výrobok zodpovedá popisu." },
-  { batch: 8, av: "X", name: "Kristína P.", city: "Hlohovec", stars: 5, text: "Porovnávala som veľa altánkov online, tento mal najlepší pomer kvality a ceny. Nebola som sklamaná, naopak! Pevná a krásna konštrukcia." },
-  { batch: 8, av: "Y", name: "Jakub C.", city: "Topoľčany", stars: 5, text: "Používam ho aj v zime na ochranu záhradného nábytku. 100% vodoodolné, testoval som ho so silným dažďom. Žiadne priesaky!" },
-  // Batch 9
-  { batch: 9, av: "S", name: "Simona A.", city: "Partizánske", stars: 5, text: "Kúpila som ho na leto, stal sa centrom našich večerov na záhrade. Priatelia sa vždy pýtajú, kde som ho zohnala. Super spokojná!" },
-  { batch: 9, av: "Q", name: "Kamil D.", city: "Púchov", stars: 4, text: "Dobrý výrobok celkovo. Len by som si prial, aby boli k dispozícii rôzne farby. Ale kvalita je výborná za zaplatenú cenu." },
-  { batch: 9, av: "AA", name: "Adam V.", city: "Skalica", stars: 5, text: "Váhal som s platbou pri doručení, ale všetko bolo perfektné. Altánok dorazil celý a dobre zabalený. Odporúčam!" },
-  // Batch 10
-  { batch: 10, av: "AB", name: "Blanka F.", city: "Malacky", stars: 5, text: "Konečne altánok, ktorý neodletí pri prvom vetre! Konštrukcia je pevná a steny dobre chránia. Veľmi spokojná s nákupom." },
-  { batch: 10, av: "AC", name: "Cyril E.", city: "Pezinok", stars: 5, text: "Postavil som ho na krstiny synovca. Všetci hostia boli nadšení. Esteticky krásny a veľmi funkčný." },
-  { batch: 10, av: "AD", name: "Dagmar L.", city: "Senec", stars: 5, text: "Po dlhom hľadaní som si vybrala tento a neľutujem. Cena je neprekonateľná za ponúkanú kvalitu. Rýchla doprava!" },
+  { batch: 1, av: "M", name: "Marek B.", city: "Bratislava", stars: 5, text: "Postavil som ho za 40 minút s manželkou. Neuveriteľná kvalita za túto cenu, myslel som, že dostanem lacné materiály, ale konštrukcia je naozaj pevná. Dvojitá strecha je geniálna!" },
+  { batch: 1, av: "J", name: "Jana S.", city: "Košice", stars: 5, text: "Už prežil dve silné búrky bez jedinej kvapky vody. Bočné steny sú super praktické, keď sú susedia v záhrade. Vrelo odporúčam!" },
+  { batch: 1, av: "P", name: "Peter F.", city: "Žilina", stars: 5, text: "Za 99€ je to darček! Videl som ho v obchode takmer za dvojnásobnú cenu. Prišiel za 2 dni, montáž jednoduchá. Teraz vždy obedujeme pod altánkom." },
+  { batch: 2, av: "L", name: "Lucia R.", city: "Nitra", stars: 5, text: "Mali sme synove narodeniny pod altánkom. 15 detí v bezpečí pred slnkom! Stabilná konštrukcia, elegantná farba, ktorá sa hodí do našej záhrady." },
+  { batch: 2, av: "T", name: "Tomáš D.", city: "Prešov", stars: 5, text: "Hľadal som altánok s bočnými stenami v cene, inde ich predávajú zvlášť za 50€ navyše. Tu bolo všetko v cene. Prémiová kvalita!" },
+  { batch: 2, av: "K", name: "Katarína M.", city: "Banská Bystrica", stars: 5, text: "Dvojitá strecha naozaj robí rozdiel. Vždy je čerstvý vzduch aj o 14:00. Postavené za menej ako hodinu, výsledok je spektakulárny!" },
+  { batch: 3, av: "R", name: "Róbert C.", city: "Trnava", stars: 5, text: "Tretí altánok, ktorý kupujem za 5 rokov, prvé dva som vyhodil po jednej sezóne. Tento vyzerá, že vydrží: silná oceľ, odolná plachta, dokonalé švy." },
+  { batch: 3, av: "E", name: "Eva L.", city: "Trenčín", stars: 5, text: "Používam ho ako kútik na čítanie a rannú kávu. So stiahnutými stenami je to môj malý raj. Výborný pomer ceny a kvality!" },
+  { batch: 3, av: "D", name: "Dávid P.", city: "Martin", stars: 5, text: "Pochyboval som kvôli nízkej cene, objednal som pripravený na vrátenie. Ale mýlil som sa: top kvalita, rýchle doručenie, jednoduchá montáž. 5 hviezdičiek zaslúžených." },
+  { batch: 4, av: "V", name: "Veronika T.", city: "Poprad", stars: 5, text: "Konečne môžem raňajkovať v záhrade bez umierania od horúčav! Altánok prišiel dobre zabalený, žiadna časť poškodená. Vrelo odporúčam." },
+  { batch: 4, av: "O", name: "Ondrej M.", city: "Piešťany", stars: 5, text: "Kúpil som ho na nedeľné grilovanie. Už prežil 3 letné búrky bez problémov. Moji priatelia boli nadšení kvalitou." },
+  { batch: 4, av: "A", name: "Anna G.", city: "Zvolen", stars: 5, text: "U nás je v lete slnko veľmi silné. Dvojitá strecha udržiava priestor chladný. Bočné steny perfektné na súkromie. Výborný nákup!" },
+  { batch: 5, av: "F", name: "Filip F.", city: "Levice", stars: 5, text: "Postavil som altánok sám za približne 50 minút podľa návodu. Stabilná konštrukcia, kvalitná plachta. Za túto cenu niet lepšieho." },
+  { batch: 5, av: "I", name: "Ivana R.", city: "Komárno", stars: 4, text: "Výborný produkt, len návod mohol byť jasnejší. Ale nakoniec všetko perfektne postavené. Altánok je krásny a funkčný." },
+  { batch: 5, av: "H", name: "Hugo B.", city: "Lučenec", stars: 5, text: "Kúpil som ho na dcérinu svadbu v záhrade. Elegantný, priestranný, ochránil hostí pred júlovým slnkom. Peniaze veľmi dobre investované!" },
+  { batch: 6, av: "B", name: "Barbora C.", city: "Skalica", stars: 5, text: "Používam ho každý deň na prácu na počítači vonku. S WiFi a altánkom mám svoju kanceláriu v záhrade. Geniálne!" },
+  { batch: 6, av: "G", name: "Gabriel L.", city: "Považská Bystrica", stars: 5, text: "Hľadal som niečo pevné, čo vydrží. Po 6 mesiacoch intenzívneho používania môžem povedať, že je to výborný produkt. Žiadne problémy." },
+  { batch: 6, av: "N", name: "Natália V.", city: "Dunajská Streda", stars: 5, text: "Platba pri doručení veľmi praktická, žiadne riziko. Kuriér bol presný. Altánok je presne ako na obrázkoch, vlastne ešte lepší!" },
+  { batch: 7, av: "U", name: "Urban Z.", city: "Partizánske", stars: 5, text: "Fantastické! Používam ho na večere vonku s priateľmi. Kvalita je naozaj špičková, plachta vyzerá veľmi odolne. Výborný nákup!" },
+  { batch: 7, av: "Z", name: "Zuzana N.", city: "Senec", stars: 5, text: "Môj starý altánok sa zlomil po jednom roku. Tento vyzerá oveľa pevnejšie. Bočné steny sú neuveriteľný bonus za túto cenu." },
+  { batch: 7, av: "C", name: "Cyril S.", city: "Topoľčany", stars: 5, text: "Perfektný pre našu záhradu! Montáž veľmi jednoduchá, v dvoch nám to trvalo pol hodiny. Béžová farba je elegantná a hodí sa ku všetkému." },
+  { batch: 8, av: "W", name: "Vladimír M.", city: "Ružomberok", stars: 5, text: "U nás je v lete veľmi horúco. Dvojitá strecha udržiava priestor chladný! Rýchle doručenie a produkt zodpovedá popisu." },
+  { batch: 8, av: "X", name: "Kristína P.", city: "Michalovce", stars: 5, text: "Porovnávala som veľa altánkov online, tento mal najlepší pomer kvality a ceny. Nebola som sklamaná, práve naopak! Pevná a krásna konštrukcia." },
+  { batch: 8, av: "Y", name: "Jakub C.", city: "Liptovský Mikuláš", stars: 5, text: "Používam ho aj v zime na ochranu záhradného nábytku. 100% vodotesný, testoval som pri silnom daždi. Žiadne pretekanie!" },
+  { batch: 9, av: "S", name: "Soňa A.", city: "Spišská Nová Ves", stars: 5, text: "Kúpila som ho na leto, stal sa centrom našich záhradných večerov. Priatelia sa vždy pýtajú, kde som ho zohnala. Super spokojná!" },
+  { batch: 9, av: "Q", name: "Karol D.", city: "Humenné", stars: 4, text: "Dobrý produkt celkovo. Len by som si želal, aby boli dostupné rôzne farby. Ale kvalita je výborná za zaplatenú cenu." },
+  { batch: 9, av: "AA", name: "Anton V.", city: "Bardejov", stars: 5, text: "Váhal som s platbou pri doručení, ale všetko bolo perfektné. Altánok prišiel celý a dobre zabalený. Odporúčam!" },
+  { batch: 10, av: "AB", name: "Blanka F.", city: "Púchov", stars: 5, text: "Konečne altánok, ktorý neodletí pri prvom vetre! Konštrukcia je pevná a steny dobre chránia. Veľmi spokojná s nákupom." },
+  { batch: 10, av: "AC", name: "Čestmír E.", city: "Dolný Kubín", stars: 5, text: "Postavil som ho na krstiny synovca. Všetci hostia boli nadšení. Esteticky krásny a veľmi funkčný." },
+  { batch: 10, av: "AD", name: "Darina L.", city: "Nové Zámky", stars: 5, text: "Po dlhom hľadaní som si vybrala tento a neľutujem. Cena je neprekonateľná za ponúkanú kvalitu. Rýchle doručenie!" },
 ];
 
 const Reviews = () => {
@@ -502,7 +492,7 @@ const Reviews = () => {
             {[...Array(5)].map((_, i) => <Star key={i} size={28} fill="currentColor" className="text-yellow-500" />)}
           </div>
           <h2 className="text-[22px] md:text-4xl font-black uppercase tracking-tight">847 Spokojných Zákazníkov</h2>
-          <p className="text-gray-500 text-[15px] md:text-base mt-2">Overené hodnotenia od našich zákazníkov</p>
+          <p className="text-gray-500 text-[15px] md:text-base mt-2">Overené recenzie našich zákazníkov</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -529,7 +519,7 @@ const Reviews = () => {
               onClick={() => setVisibleBatch(prev => Math.min(prev + 1, maxBatch))}
               className="bg-white border-2 border-orange-500 text-orange-600 px-8 py-4 rounded-xl font-black text-base uppercase tracking-wide hover:bg-orange-500 hover:text-white transition-all shadow-sm"
             >
-              Zobraziť viac hodnotení
+              Zobraziť viac recenzií
             </button>
           </div>
         )}
@@ -597,8 +587,8 @@ const QuickOrderForm = () => {
     const formData = new URLSearchParams();
 
     // Required fields - Slovak offer
-    formData.append('uid', '019be4ed-fb60-7ba4-89d4-deecc13c8b0a');
-    formData.append('key', '7b172b0b1994e9fa9961ad');
+    formData.append('uid', '019be4ed-80e5-7970-ab86-1938a865c187');
+    formData.append('key', 'd05dde623c227395880400');
     formData.append('offer', '3248');
     formData.append('lp', '3291');
     formData.append('name', form.fullName.trim());
@@ -678,7 +668,7 @@ const QuickOrderForm = () => {
             <span className="text-5xl md:text-6xl font-black">99€</span>
           </div>
           <p className="text-white/90 text-[15px] md:text-base">
-            Doprava ZADARMO • Doručenie 24-48h
+            Doručenie ZADARMO • Dodanie 24-48h
           </p>
         </div>
 
@@ -713,7 +703,7 @@ const QuickOrderForm = () => {
               <span className="py-4 px-3.5 text-[15px] font-bold text-gray-500 bg-gray-100 border-r-2 border-gray-200 flex items-center">+421</span>
               <input
                 type="tel"
-                placeholder="905 123 456"
+                placeholder="912 345 678"
                 value={form.phone}
                 onChange={(e) => updateForm("phone", e.target.value)}
                 className="flex-1 py-4 px-4 text-[16px] font-medium outline-none bg-transparent"
@@ -743,14 +733,14 @@ const QuickOrderForm = () => {
           </div>
 
           <div className="flex items-center justify-center gap-4 text-[13px] md:text-sm text-gray-400 pt-2">
-            <span className="flex items-center gap-1"><Truck size={14} /> Doprava Zadarmo</span>
+            <span className="flex items-center gap-1"><Truck size={14} /> Doručenie Zadarmo</span>
             <span className="flex items-center gap-1"><RotateCcw size={14} /> Vrátenie 30 dní</span>
             <span className="flex items-center gap-1"><Shield size={14} /> Záruka 2 roky</span>
           </div>
         </form>
 
         <p className="text-center text-white/70 text-[13px] md:text-sm mt-4">
-          Náš operátor vás bude kontaktovať pre potvrdenie objednávky
+          Náš operátor vás bude kontaktovať na potvrdenie objednávky
         </p>
       </div>
     </section>
@@ -783,7 +773,7 @@ const UrgencySection = () => {
         </div>
 
         <h2 className="text-[26px] md:text-5xl font-black text-center uppercase tracking-tight mb-8 leading-tight">
-          Prečo Musíte <span className="text-orange-500">Konať HNEĎ</span>
+          Prečo Musíte <span className="text-orange-500">Konať TERAZ</span>
         </h2>
 
         <div className="grid grid-cols-3 gap-3 md:gap-4 mb-10">
@@ -808,9 +798,9 @@ const UrgencySection = () => {
                 <AlertTriangle className="text-white" size={20} />
               </div>
               <div>
-                <h4 className="font-black text-base md:text-lg mb-1">Zásoby sa Vypredávajú</h4>
+                <h4 className="font-black text-base md:text-lg mb-1">Zásoby Sa Míňajú</h4>
                 <p className="text-gray-300 text-[14px] md:text-[15px] leading-relaxed">
-                  Táto séria za <strong className="text-white">99€</strong> je takmer vypredaná. Ďalšia objednávka od dodávateľa bude drahšia a cena sa vráti na <strong className="text-white">219€</strong>. Túto cenu nemôžeme zaručiť zajtra.
+                  Táto séria za <strong className="text-white">99€</strong> je takmer vypredaná. Ďalšia objednávka od dodávateľa bude drahšia a cena sa vráti na <strong className="text-white">219€</strong>. Túto cenu nemôžeme garantovať zajtra.
                 </p>
               </div>
             </div>
@@ -822,9 +812,9 @@ const UrgencySection = () => {
                 <Truck className="text-white" size={20} />
               </div>
               <div>
-                <h4 className="font-black text-base md:text-lg mb-1">Doprava Zadarmo Iba Dnes</h4>
+                <h4 className="font-black text-base md:text-lg mb-1">Bezplatné Doručenie Iba Dnes</h4>
                 <p className="text-gray-300 text-[14px] md:text-[15px] leading-relaxed">
-                  Normálne doprava stojí <strong className="text-white">14,90€</strong> za taký veľký balík. Dnes ju ponúkame <strong className="text-white">ZADARMO</strong> ako motiváciu k vypredaniu skladu. Táto akcia sa môže skončiť o polnoci.
+                  Normálne doručenie stojí <strong className="text-white">14,90€</strong> pre taký veľký balík. Dnes ho ponúkame <strong className="text-white">ZADARMO</strong> ako motiváciu na vypredanie skladu. Táto akcia môže skončiť o polnoci.
                 </p>
               </div>
             </div>
@@ -837,12 +827,12 @@ const UrgencySection = () => {
             <div className="space-y-3">
               <div className="flex items-center gap-2 text-green-400 font-bold text-sm md:text-base">
                 <CheckCircle2 size={20} />
-                <span>OBJEDNÁTE DNES</span>
+                <span>OBJEDNAJTE DNES</span>
               </div>
               <ul className="space-y-2.5 text-[13px] md:text-sm">
-                <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-green-500 flex-shrink-0" /> Zaplatíte len 99€</li>
-                <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-green-500 flex-shrink-0" /> Doprava ZADARMO</li>
-                <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-green-500 flex-shrink-0" /> Doručenie 24-48h</li>
+                <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-green-500 flex-shrink-0" /> Zaplatíte iba 99€</li>
+                <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-green-500 flex-shrink-0" /> Doručenie ZADARMO</li>
+                <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-green-500 flex-shrink-0" /> Dodanie 24-48h</li>
                 <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-green-500 flex-shrink-0" /> Pripravení na leto</li>
                 <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-green-500 flex-shrink-0" /> Ušetríte 120€</li>
               </ul>
@@ -854,9 +844,9 @@ const UrgencySection = () => {
               </div>
               <ul className="space-y-2.5 text-[13px] md:text-sm text-gray-400">
                 <li className="flex items-center gap-2"><XCircle size={16} className="text-red-500 flex-shrink-0" /> Zaplatíte 219€</li>
-                <li className="flex items-center gap-2"><XCircle size={16} className="text-red-500 flex-shrink-0" /> Doprava 14,90€</li>
+                <li className="flex items-center gap-2"><XCircle size={16} className="text-red-500 flex-shrink-0" /> Doručenie 14,90€</li>
                 <li className="flex items-center gap-2"><XCircle size={16} className="text-red-500 flex-shrink-0" /> Čakanie 2-3 týždne</li>
-                <li className="flex items-center gap-2"><XCircle size={16} className="text-red-500 flex-shrink-0" /> Zmeškáte pol leta</li>
+                <li className="flex items-center gap-2"><XCircle size={16} className="text-red-500 flex-shrink-0" /> Premeškáte polovicu leta</li>
                 <li className="flex items-center gap-2"><XCircle size={16} className="text-red-500 flex-shrink-0" /> Žiadna úspora</li>
               </ul>
             </div>
@@ -865,7 +855,7 @@ const UrgencySection = () => {
 
         <div className="text-center">
           <p className="text-gray-400 text-[14px] md:text-base mb-5 leading-relaxed">
-            Žiadne riziko: <strong className="text-white">platíte pri doručení</strong> a máte <strong className="text-white">30 dní</strong> na vrátenie zadarmo.
+            Žiadne riziko: <strong className="text-white">platíte pri doručení</strong> a máte <strong className="text-white">30 dní</strong> na bezplatné vrátenie.
           </p>
           <button
             onClick={() => document.getElementById('form-objednat')?.scrollIntoView({ behavior: 'smooth' })}
@@ -875,7 +865,7 @@ const UrgencySection = () => {
             ÁNO, CHCEM SVOJ ALTÁNOK ZA 99€
           </button>
           <p className="text-gray-500 text-xs md:text-sm mt-3">
-            Kliknite na tlačidlo a vyplňte formulár — zaberie to len 30 sekúnd
+            Kliknite na tlačidlo a vyplňte formulár — trvá to iba 30 sekúnd
           </p>
         </div>
       </div>
@@ -889,19 +879,19 @@ const FAQ = () => {
   const faqs = [
     {
       q: "Ako dlho trvá montáž?",
-      a: "30-45 minút s 2 osobami. Jasný návod a náradie v cene."
+      a: "30-45 minút s 2 osobami. Jasný návod a náradie v balení."
     },
     {
-      q: "Je odolný proti dažďu?",
-      a: "Áno, plachta je 100% vodoodolná s PU povlakom."
+      q: "Je odolný voči dažďu?",
+      a: "Áno, plachta je 100% vodotesná s PU povrchovou úpravou."
     },
     {
       q: "Sú steny v cene?",
       a: "Áno! Všetky 4 bočné steny sú zahrnuté v cene 99€."
     },
     {
-      q: "Ako zaplatím?",
-      a: "Platíte v hotovosti kuriérovi pri prevzatí balíka. Žiadna platba vopred."
+      q: "Ako platím?",
+      a: "Platíte v hotovosti kuriérovi pri prebraní balíka. Žiadna platba vopred."
     },
   ];
 
@@ -909,7 +899,7 @@ const FAQ = () => {
     <section className="bg-white py-16 px-4">
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-8">
-          <h2 className="text-[22px] md:text-4xl font-black uppercase tracking-tight">Časté Otázky</h2>
+          <h2 className="text-[22px] md:text-4xl font-black uppercase tracking-tight">Často Kladené Otázky</h2>
         </div>
 
         <div className="space-y-3">
@@ -973,7 +963,7 @@ const Footer = () => (
       </div>
       <div className="flex flex-wrap justify-center gap-6 text-xs font-bold uppercase text-gray-500 tracking-wide">
         <a href="/privacy-policy" className="hover:text-white transition-colors">Ochrana Súkromia</a>
-        <a href="/terms-of-service" className="hover:text-white transition-colors">Podmienky</a>
+        <a href="/terms-of-service" className="hover:text-white transition-colors">Obchodné Podmienky</a>
         <a href="/contact" className="hover:text-white transition-colors">Kontakt</a>
       </div>
       <p className="text-xs text-gray-600">
@@ -988,6 +978,13 @@ const Footer = () => (
 export default function Page() {
   return (
     <div className="min-h-screen bg-white font-sans text-black">
+      {/* Google Ads gtag */}
+      <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17541805101" />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-17541805101');`,
+        }}
+      />
       <CountdownTimer />
       <Header />
       <Hero />

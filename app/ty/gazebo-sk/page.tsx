@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
+import Script from 'next/script';
 import {
   CheckCircle2,
   Truck,
@@ -16,6 +17,17 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 
+declare global {
+  interface Window {
+    dataLayer: unknown[];
+    gtag: (...args: unknown[]) => void;
+    __conversionFired?: boolean;
+  }
+}
+
+const CONVERSION_ID = 'AW-17541805101';
+const CONVERSION_LABEL = 'AW-17541805101/4iqCCNS-naUcEK3oyqxB';
+
 export default function GazeboSkThankYou() {
   const [orderData, setOrderData] = useState<{
     fullName?: string;
@@ -23,8 +35,24 @@ export default function GazeboSkThankYou() {
     phone?: string;
   }>({});
 
+  // Google Ads conversion tracking
   useEffect(() => {
-    // Získať údaje objednávky z localStorage
+    const checkAndFire = () => {
+      if (window.__conversionFired) return;
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'conversion', {
+          'send_to': CONVERSION_LABEL
+        });
+        window.__conversionFired = true;
+      }
+    };
+
+    checkAndFire();
+    const timeout = setTimeout(checkAndFire, 1000);
+    return () => clearTimeout(timeout);
+  }, []);
+
+  useEffect(() => {
     const storedData = localStorage.getItem('gazebo-sk-order');
     if (storedData) {
       try {
@@ -44,7 +72,31 @@ export default function GazeboSkThankYou() {
     month: 'long'
   });
 
+  const handleGtagLoad = () => {
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function gtag() {
+      window.dataLayer.push(arguments);
+    };
+    window.gtag('js', new Date());
+    window.gtag('config', CONVERSION_ID);
+
+    if (!window.__conversionFired) {
+      window.gtag('event', 'conversion', {
+        'send_to': CONVERSION_LABEL
+      });
+      window.__conversionFired = true;
+    }
+  };
+
   return (
+    <>
+      {/* Google Ads Conversion Tracking */}
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${CONVERSION_ID}`}
+        strategy="afterInteractive"
+        onLoad={handleGtagLoad}
+      />
+
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Header */}
       <header className="bg-white border-b border-gray-200 py-4 px-4">
@@ -128,7 +180,7 @@ export default function GazeboSkThankYou() {
                 </div>
                 <div>
                   <p className="font-bold text-gray-900 text-sm uppercase tracking-wide mb-1">Adresa Doručenia</p>
-                  <p className="text-gray-600">{orderData.address || 'Adresa poskytnutá'}</p>
+                  <p className="text-gray-600">{orderData.address || 'Adresa uvedená'}</p>
                 </div>
               </div>
 
@@ -137,9 +189,9 @@ export default function GazeboSkThankYou() {
                   <Truck className="text-green-600" size={20} />
                 </div>
                 <div>
-                  <p className="font-bold text-gray-900 text-sm uppercase tracking-wide mb-1">Predpokladané Doručenie</p>
+                  <p className="font-bold text-gray-900 text-sm uppercase tracking-wide mb-1">Očakávané Doručenie</p>
                   <p className="text-gray-600 capitalize">{formattedDate}</p>
-                  <p className="text-green-600 font-bold text-sm mt-1">Doprava ZADARMO</p>
+                  <p className="text-green-600 font-bold text-sm mt-1">Doručenie ZADARMO</p>
                 </div>
               </div>
 
@@ -150,7 +202,7 @@ export default function GazeboSkThankYou() {
                 <div>
                   <p className="font-bold text-gray-900 text-sm uppercase tracking-wide mb-1">Spôsob Platby</p>
                   <p className="text-gray-600">Dobierka - Platba pri doručení</p>
-                  <p className="text-gray-500 text-sm mt-1">Suma na úhradu: <span className="font-bold text-gray-900">99,00 €</span></p>
+                  <p className="text-gray-500 text-sm mt-1">Suma na zaplatenie: <span className="font-bold text-gray-900">99,00 €</span></p>
                 </div>
               </div>
             </div>
@@ -158,7 +210,7 @@ export default function GazeboSkThankYou() {
             {/* Total */}
             <div className="p-6 md:p-8 bg-gradient-to-r from-orange-500 to-red-500 text-white">
               <div className="flex justify-between items-center">
-                <span className="font-bold text-lg uppercase">Celkom na Úhradu</span>
+                <span className="font-bold text-lg uppercase">Celkom na Zaplatenie</span>
                 <span className="text-3xl md:text-4xl font-black">99,00 €</span>
               </div>
               <p className="text-orange-100 text-sm mt-2">Ušetrili ste 120,00 € s letnou akciou!</p>
@@ -187,7 +239,7 @@ export default function GazeboSkThankYou() {
               <div>
                 <h3 className="font-bold text-gray-900 mb-1">Potvrdenie cez SMS</h3>
                 <p className="text-gray-600 text-sm">
-                  Dostanete SMS potvrdenie na číslo {orderData.phone || 'poskytnuté'} s detailmi objednávky.
+                  Dostanete SMS potvrdenie na číslo {orderData.phone || 'uvedené'} s podrobnosťami objednávky.
                 </p>
               </div>
             </motion.div>
@@ -260,7 +312,7 @@ export default function GazeboSkThankYou() {
             <Phone className="mx-auto mb-4 text-orange-400" size={40} />
             <h3 className="text-xl md:text-2xl font-black mb-2 uppercase">Potrebujete Pomoc?</h3>
             <p className="text-gray-400 mb-4 text-sm md:text-base">
-              Naša zákaznícka služba je k dispozícii od pondelka do piatku, 9:00 - 18:00
+              Naša zákaznícka podpora je k dispozícii od pondelka do piatku, 9:00 - 18:00
             </p>
             <a
               href="tel:+421123456789"
@@ -282,7 +334,7 @@ export default function GazeboSkThankYou() {
               Exkluzívny Bonus!
             </h3>
             <p className="text-white/90 mb-4 text-sm md:text-base">
-              S vašou objednávkou dostanete <strong>ZADARMO</strong> extra sadu kolíkov na ukotvenie na mäkkom teréne!
+              K vašej objednávke dostanete <strong>ZADARMO</strong> dodatočnú sadu kolíkov na upevnenie na mäkkom podklade!
             </p>
             <div className="inline-block bg-white/20 backdrop-blur-sm rounded-xl px-4 py-2">
               <span className="text-white font-bold">Hodnota: 19,90€ — ZADARMO</span>
@@ -299,7 +351,7 @@ export default function GazeboSkThankYou() {
           </div>
           <div className="flex flex-wrap justify-center gap-6 text-xs font-bold uppercase text-gray-500 tracking-wide">
             <Link href="/privacy-policy" className="hover:text-white transition-colors">Ochrana Súkromia</Link>
-            <Link href="/terms-of-service" className="hover:text-white transition-colors">Podmienky</Link>
+            <Link href="/terms-of-service" className="hover:text-white transition-colors">Obchodné Podmienky</Link>
             <Link href="/contact" className="hover:text-white transition-colors">Kontakt</Link>
           </div>
           <p className="text-xs text-gray-600">
@@ -308,5 +360,6 @@ export default function GazeboSkThankYou() {
         </div>
       </footer>
     </div>
+    </>
   );
 }
