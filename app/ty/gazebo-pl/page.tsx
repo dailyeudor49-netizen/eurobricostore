@@ -17,12 +17,40 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Script from 'next/script';
 
+declare global {
+  interface Window {
+    dataLayer: unknown[];
+    gtag: (...args: unknown[]) => void;
+    __conversionFiredPl?: boolean;
+  }
+}
+
+const CONVERSION_ID = 'AW-17541805101';
+const CONVERSION_LABEL = 'AW-17541805101/BEibCO3VnKocEK3oyqxB';
+
 export default function GazeboPlThankYou() {
   const [orderData, setOrderData] = useState<{
     fullName?: string;
     address?: string;
     phone?: string;
   }>({});
+
+  // Google Ads conversion tracking
+  useEffect(() => {
+    const checkAndFire = () => {
+      if (window.__conversionFiredPl) return;
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'conversion', {
+          'send_to': CONVERSION_LABEL
+        });
+        window.__conversionFiredPl = true;
+      }
+    };
+
+    checkAndFire();
+    const timeout = setTimeout(checkAndFire, 1000);
+    return () => clearTimeout(timeout);
+  }, []);
 
   useEffect(() => {
     const storedData = localStorage.getItem('gazebo-pl-order');
@@ -35,22 +63,6 @@ export default function GazeboPlThankYou() {
     }
   }, []);
 
-  const handleGtagReady = () => {
-    const w = window as unknown as Record<string, unknown>;
-    w.dataLayer = (w.dataLayer as unknown[]) || [];
-    function gtag() { (w.dataLayer as unknown[]).push(arguments); }
-    // @ts-expect-error gtag uses arguments object
-    gtag('js', new Date());
-    // @ts-expect-error gtag uses arguments object
-    gtag('config', 'AW-17541805101');
-
-    if (!localStorage.getItem('gazebo-pl-conv-fired')) {
-      // @ts-expect-error gtag uses arguments object
-      gtag('event', 'conversion', { send_to: 'AW-17541805101/BEibCO3VnKocEK3oyqxB' });
-      localStorage.setItem('gazebo-pl-conv-fired', '1');
-    }
-  };
-
   const orderNumber = `GZB-${Date.now().toString().slice(-6)}`;
   const deliveryDate = new Date();
   deliveryDate.setDate(deliveryDate.getDate() + 2);
@@ -60,14 +72,32 @@ export default function GazeboPlThankYou() {
     month: 'long'
   });
 
+  const handleGtagLoad = () => {
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function gtag() {
+      window.dataLayer.push(arguments);
+    };
+    window.gtag('js', new Date());
+    window.gtag('config', CONVERSION_ID);
+
+    if (!window.__conversionFiredPl) {
+      window.gtag('event', 'conversion', {
+        'send_to': CONVERSION_LABEL
+      });
+      window.__conversionFiredPl = true;
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <>
+      {/* Google Ads Conversion Tracking */}
       <Script
-        src="https://www.googletagmanager.com/gtag/js?id=AW-17541805101"
+        src={`https://www.googletagmanager.com/gtag/js?id=${CONVERSION_ID}`}
         strategy="afterInteractive"
-        onLoad={handleGtagReady}
+        onLoad={handleGtagLoad}
       />
 
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Header */}
       <header className="bg-white border-b border-gray-200 py-4 px-4">
         <div className="max-w-4xl mx-auto text-center">
@@ -330,5 +360,6 @@ export default function GazeboPlThankYou() {
         </div>
       </footer>
     </div>
+    </>
   );
 }
